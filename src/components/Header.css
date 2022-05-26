@@ -1,0 +1,23 @@
+nav {
+  background: #378ad7;
+  color: white;
+}
+
+.nav-lg {
+  height: 60px;
+}
+
+.nav-sm {
+  height: 60px;
+}
+
+.search-input {
+  height: 40px;
+  width: 500px;
+  border-radius: 30px;
+  border-width: 0px;
+  text-align: right;
+  font-family: Rubik;
+  color: #0e69ac;
+  padding-right: 50px;
+}
