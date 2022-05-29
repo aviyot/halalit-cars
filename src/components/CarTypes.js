@@ -1,49 +1,86 @@
 import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
+import lising from "../assets/carTypes/lising.png";
+import geep from "../assets/carTypes/geep.png";
+import masait from "../assets/carTypes/masait.png";
+import mshari from "../assets/carTypes/mshari.png";
+import myuhadim from "../assets/carTypes/myuhadim.png";
+import ofona from "../assets/carTypes/ofona.png";
+import prati from "../assets/carTypes/prati.png";
+import shait from "../assets/carTypes/shait.png";
 
-export default function CarTypes() {
+export default function CarTypes({ setSelectedUI, setSelectedCarType }) {
   const [carTypes, setCarTypes] = useState([
     {
+      name: "ליסינג",
+      imgSrc: lising,
+    },
+    {
       name: "פרטי",
-      imgSrc:
-        "https://images.unsplash.com/photo-1616422285623-13ff0162193c?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGNhcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=600",
+      imgSrc: prati,
     },
     {
       name: "משאית",
-      imgSrc:
-        "https://media.istockphoto.com/photos/cloesup-view-of-a-long-haul-semi-truck-speeding-down-the-highway-picture-id1213020206?k=20&m=1213020206&s=612x612&w=0&h=F6tgLpNIOb8OLXT0BLyKzLbEsmSffzdfLW3el7ToILw=",
+      imgSrc: masait,
     },
     {
-      name: "משאית",
-      imgSrc:
-        "https://media.istockphoto.com/photos/cloesup-view-of-a-long-haul-semi-truck-speeding-down-the-highway-picture-id1213020206?k=20&m=1213020206&s=612x612&w=0&h=F6tgLpNIOb8OLXT0BLyKzLbEsmSffzdfLW3el7ToILw=",
+      name: "מסחרי",
+      imgSrc: mshari,
     },
     {
-      name: "משאית",
-      imgSrc:
-        "https://media.istockphoto.com/photos/cloesup-view-of-a-long-haul-semi-truck-speeding-down-the-highway-picture-id1213020206?k=20&m=1213020206&s=612x612&w=0&h=F6tgLpNIOb8OLXT0BLyKzLbEsmSffzdfLW3el7ToILw=",
+      name: "גיפים",
+      imgSrc: geep,
     },
     {
-      name: "משאית",
-      imgSrc:
-        "https://media.istockphoto.com/photos/cloesup-view-of-a-long-haul-semi-truck-speeding-down-the-highway-picture-id1213020206?k=20&m=1213020206&s=612x612&w=0&h=F6tgLpNIOb8OLXT0BLyKzLbEsmSffzdfLW3el7ToILw=",
+      name: "אופנועים",
+      imgSrc: ofona,
+    },
+    {
+      name: "כלי שייט",
+      imgSrc: shait,
+    },
+    {
+      name: "מיוחדים",
+      imgSrc: myuhadim,
     },
   ]);
 
   return (
     <div
-      style={{ display: "flex", flexWrap: "wrap", justifyContent: "stretch" }}
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "end",
+        flexDirection: "row-reverse",
+        gap: "1rem",
+        margin: "0 1rem",
+      }}
     >
       {carTypes.map((item) => (
-        <Card style={{ width: "200px" }}>
+        <Card
+          onClick={() => {
+            setSelectedUI("CARS_LIST");
+            setSelectedCarType(item.name);
+          }}
+        >
+          <Card.Title
+            style={{
+              alignSelf: "flex-end",
+              marginRight: "1rem",
+              fontFamily: "Rubik",
+              fontStyle: "normal",
+              fontWeight: "500",
+              fontSize: "36px",
+              color: "#919497",
+            }}
+          >
+            {item.name}
+          </Card.Title>
           <Card.Img
             variant="top"
             src={item.imgSrc}
-            style={{ height: "100px", width: "100%" }}
+            style={{ height: "100px", width: "100%", borderRadius: "1rem" }}
           />
-          <Card.Body>
-            <Card.Title>{item.name}</Card.Title>
-          </Card.Body>
         </Card>
       ))}
     </div>
