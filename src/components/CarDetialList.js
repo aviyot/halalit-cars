@@ -77,15 +77,6 @@ function CarDetialList({ selectedCarType, setSelectedCarType }) {
   return (
     <div>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <button
-          className="btn btn-outline-primary"
-          onClick={() => {
-            setSelectedCarType(null);
-          }}
-        >
-          חזרה
-        </button>
-
         <h2
           style={{
             textAlign: "right",
@@ -100,14 +91,22 @@ function CarDetialList({ selectedCarType, setSelectedCarType }) {
         >
           {selectedCarType}
         </h2>
+        <button
+          className="btn btn-outline-primary"
+          onClick={() => {
+            setSelectedCarType(null);
+          }}
+        >
+          חזרה
+        </button>
       </div>
       <div
         style={{
           display: "flex",
           flexWrap: "wrap",
-          flexDirection: "row-reverse",
           gap: "1rem",
           textAlign: "right",
+          justifyContent: "center",
         }}
       >
         {carDetialList.map((carDetial) => (

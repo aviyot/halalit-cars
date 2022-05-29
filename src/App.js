@@ -7,32 +7,13 @@ import CarTypes from "./components/CarTypes";
 import { useState } from "react";
 
 function App() {
-  const UI = ["CAR_TYPES", "CARS_LIST"];
-  const [selectedUI, setSelectedUI] = useState(UI[0]);
   const [selectedCarType, setSelectedCarType] = useState(null);
 
   return (
     <div className="App">
-      <div style={{ display: "flex" }}>
-        {UI.map((ui) => (
-          <button
-            className="btn"
-            onClick={() => {
-              setSelectedUI(ui);
-            }}
-          >
-            {ui}
-          </button>
-        ))}
-      </div>
       <Header />
       {!selectedCarType && <HomeAd />}
-      {!selectedCarType && (
-        <CarTypes
-          setSelectedUI={setSelectedUI}
-          setSelectedCarType={setSelectedCarType}
-        />
-      )}
+      {!selectedCarType && <CarTypes setSelectedCarType={setSelectedCarType} />}
       {selectedCarType && (
         <CarDetialList
           selectedCarType={selectedCarType}

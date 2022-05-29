@@ -9,7 +9,7 @@ import ofona from "../assets/carTypes/ofona.png";
 import prati from "../assets/carTypes/prati.png";
 import shait from "../assets/carTypes/shait.png";
 
-export default function CarTypes({ setSelectedUI, setSelectedCarType }) {
+export default function CarTypes({ setSelectedCarType }) {
   const [carTypes, setCarTypes] = useState([
     {
       name: "ליסינג",
@@ -50,22 +50,19 @@ export default function CarTypes({ setSelectedUI, setSelectedCarType }) {
       style={{
         display: "flex",
         flexWrap: "wrap",
-        justifyContent: "end",
-        flexDirection: "row-reverse",
         gap: "1rem",
         margin: "0 1rem",
+        justifyContent: "space-around",
       }}
     >
       {carTypes.map((item) => (
         <Card
           onClick={() => {
-            setSelectedUI("CARS_LIST");
             setSelectedCarType(item.name);
           }}
         >
           <Card.Title
             style={{
-              alignSelf: "flex-end",
               marginRight: "1rem",
               fontFamily: "Rubik",
               fontStyle: "normal",
