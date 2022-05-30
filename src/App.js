@@ -12,14 +12,18 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {!selectedCarType && <HomeAd />}
-      {!selectedCarType && <CarTypes setSelectedCarType={setSelectedCarType} />}
-      {selectedCarType && (
-        <CarDetialList
-          selectedCarType={selectedCarType}
-          setSelectedCarType={setSelectedCarType}
-        />
-      )}
+      <div style={{ marginTop: "60px" }}>
+        {!selectedCarType && <HomeAd />}
+        {!selectedCarType && (
+          <CarTypes setSelectedCarType={setSelectedCarType} />
+        )}
+        {selectedCarType && (
+          <CarDetialList
+            selectedCarType={selectedCarType}
+            setSelectedCarType={setSelectedCarType}
+          />
+        )}
+      </div>
       <Footer />
     </div>
   );

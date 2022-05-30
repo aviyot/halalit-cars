@@ -6,7 +6,7 @@ import "./Header.css";
 function Header() {
   return (
     <>
-      <nav className="navbar d-none d-lg-flex nav-lg">
+      <nav className="navbar d-none fixed-top d-lg-flex nav-lg">
         <div className="container-fluid d-flex">
           <span style={{ display: "flex", gap: "8px", alignItems: "center" }}>
             <img style={{ width: "117px", height: "54px" }} src={logo} />
