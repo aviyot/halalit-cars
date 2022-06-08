@@ -1,16 +1,11 @@
-import Carousel from "react-bootstrap/Carousel";
-import { useState } from "react";
-import car1 from "../../src/assets/car1.png";
+import { useEffect, useState } from "react";
 import maincover from "../../src/assets/maincover.png";
+import "./HomeAd.css";
 
 function HomeAd() {
   const [index, setIndex] = useState(0);
+  const [adIterval, setAdInterval] = useState(0);
   const [homeAd, setHomeAd] = useState([
-    {
-      imgSrc: car1,
-      words: " שירות על - מקבלים רק אצלנו",
-      deteilSrc: "",
-    },
     {
       imgSrc:
         "https://images.unsplash.com/photo-1610399214658-52b9fdea4627?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8Y2Fyc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600",
@@ -30,41 +25,77 @@ function HomeAd() {
   };
 
   const imgStyle = {
-    height: "200px",
+    height: "100%",
   };
+  useEffect(() => {
+    if (adIterval) {
+      clearInterval(adIterval);
+    } else {
+      setAdInterval(
+        setInterval(() => {
+          setIndex((preIndex) => {
+            if (preIndex < homeAd.length - 1) return preIndex + 1;
+            else return 0;
+          });
+        }, 3000)
+      );
+    }
+  }, []);
   return (
-    <div className="carousel" style={{ backgroundImage: `url(${maincover})` }}>
-      <Carousel
-        activeIndex={index}
-        onSelect={handleSelect}
-        className="w-50"
-        style={{ margin: "0 auto" }}
-      >
-        {homeAd.map((item) => (
-          <Carousel.Item key={item.imgSrc}>
-            <img
-              style={imgStyle}
-              className="d-block w-100"
-              src={item.imgSrc}
-              alt="First slide"
-            />
-            <Carousel.Caption>
-              <h3>
-                <button src={item.deteilSrc} className="btn btn-warning">
-                  לפרטים
-                </button>
-                <span style={{ color: "#469AE8" }}>
-                  {" "}
-                  {item.words.split("-")[0]}
-                </span>
-                <span style={{ color: "white" }}>
-                  -{item.words.split("-")[1]}
-                </span>
-              </h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-        ))}
-      </Carousel>
+    <div className="rel" style={{ backgroundImage: `url(${maincover})` }}>
+      <div>
+        <div className="flex flex-just-center">
+          {homeAd.map(
+            (item, itemIndex) =>
+              itemIndex === index && (
+                <div
+                  className="rel"
+                  key={item.imgSrc}
+                  style={{ height: "200px", width: "80%" }}
+                >
+                  <img
+                    className="w-100"
+                    style={{ height: "100%" }}
+                    src={item.imgSrc}
+                  />
+                  <h3 className="flex abs top flex-just-center">
+                    <span>
+                      <span style={{ color: "#469AE8" }}>
+                        {" "}
+                        {item.words.split("-")[0]}
+                      </span>
+                      <span style={{ color: "white" }}>
+                        -{item.words.split("-")[1]}
+                      </span>
+                      <button className="detail-button" src={item.deteilSrc}>
+                        לפרטים
+                      </button>
+                    </span>
+                  </h3>
+                </div>
+              )
+          )}
+        </div>
+        <div className="flex button flex-just-center gap-8 w-100">
+          {homeAd.map((item, itemIndex) => (
+            <div
+              className="inductors"
+              key={item.imgSrc}
+              type="radio"
+              name="selectedAd"
+              style={
+                itemIndex === index
+                  ? { backgroundColor: " #6EBDF7" }
+                  : { backgroundColor: "#F0E4E4" }
+              }
+              onClick={() => {
+                clearInterval(adIterval);
+                setIndex(itemIndex);
+              }}
+            ></div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

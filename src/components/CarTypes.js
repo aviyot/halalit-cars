@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Card from "react-bootstrap/Card";
 import lising from "../assets/carTypes/lising.png";
 import geep from "../assets/carTypes/geep.png";
 import masait from "../assets/carTypes/masait.png";
@@ -46,22 +45,15 @@ export default function CarTypes({ setSelectedCarType }) {
   ]);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        gap: "1rem",
-        margin: "0 1rem",
-        justifyContent: "space-around",
-      }}
-    >
+    <div className="grid-md grid-lg gap-8">
       {carTypes.map((item) => (
-        <Card
+        <div
+          style={{ boxShadow: "5px 10px 18px #888888" }}
           onClick={() => {
             setSelectedCarType(item.name);
           }}
         >
-          <Card.Title
+          <h3
             style={{
               marginRight: "1rem",
               fontFamily: "Rubik",
@@ -72,13 +64,12 @@ export default function CarTypes({ setSelectedCarType }) {
             }}
           >
             {item.name}
-          </Card.Title>
-          <Card.Img
-            variant="top"
+          </h3>
+          <img
             src={item.imgSrc}
-            style={{ height: "100px", width: "100%", borderRadius: "1rem" }}
+            style={{ height: "200px", width: "300px", borderRadius: "1rem" }}
           />
-        </Card>
+        </div>
       ))}
     </div>
   );

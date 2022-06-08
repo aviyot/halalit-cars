@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Card, Button } from "react-bootstrap";
 import car1 from "../assets/car-list-lising/car1.png";
 import car2 from "../assets/car-list-lising/car2.png";
 import car3 from "../assets/car-list-lising/car3.png";
@@ -8,6 +7,8 @@ import car5 from "../assets/car-list-lising/car5.png";
 import car6 from "../assets/car-list-lising/car6.png";
 import car7 from "../assets/car-list-lising/car7.png";
 import car8 from "../assets/car-list-lising/car8.png";
+import key from "../assets/key.png";
+import keyHold from "../assets/keyHold.png";
 import type_list_car_cover from "../assets/type_list_car_cover.png";
 
 function CarDetialList({ selectedCarType, setSelectedCarType }) {
@@ -122,178 +123,212 @@ function CarDetialList({ selectedCarType, setSelectedCarType }) {
             margin: "2rem",
           }}
         >
-          {selectedCarType}
+          <div className="flex gap-8">
+            <div
+              className="br-100"
+              style={{
+                backgroundColor: "#EF8539",
+                width: "40px",
+                height: "40px",
+                textAlign: "center",
+              }}
+            >
+              <img src={keyHold}></img>
+              <img src={key}></img>
+            </div>
+            <span> {selectedCarType}</span>
+          </div>
         </h2>
         <button
-          className="btn btn-outline-primary"
-          style={{ alignSelf: "center", margin: "2rem" }}
+          className="bg-trans b-0"
+          style={{
+            alignSelf: "center",
+            margin: "2rem",
+            borderRadius: "30px",
+            width: "120px",
+            height: "40px",
+            backgroundColor: "white",
+            color: "#378AD7",
+          }}
           onClick={() => {
             setSelectedCarType(null);
           }}
         >
-          חזרה
+          <span className="flex" style={{ justifyContent: "space-around" }}>
+            <span class="material-icons">arrow_forward</span>
+            <span style={{ font: "Robik", fontWeight: "600" }}>חזרה</span>
+          </span>
         </button>
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "1rem",
-          textAlign: "right",
-          justifyContent: "center",
-        }}
-      >
+      <div className="grid-md grid-lg" style={{ gridRowGap: "50px" }}>
         {carDetialList.map((carDetial) => (
-          <Card
+          <div
             key={carDetial.name}
-            style={{ minWidth: "200px", maxWidth: "300px" }}
+            style={{
+              minWidth: "200px",
+              maxWidth: "300px",
+              borderRadius: "15px",
+              boxShadow: "5px 10px 18px #888888",
+              paddingBottom: "20px",
+            }}
           >
-            <Card.Body style={{ padding: "0 0" }}>
-              <Card.Img
-                variant="top"
-                src={carDetial.img}
-                style={{ height: "100px", width: "100%", borderRadius: "1rem" }}
-              />
-              <Card.Title>{carDetial.name}</Card.Title>
-              <Card.Text>{carDetial.address}</Card.Text>
-              <Card.Text>
-                <div>
-                  <div
-                    style={{
-                      display: "flex",
-                      gap: "10px",
-                      backgroundColor: "#E2F1FF",
-                      padding: "8px",
-                    }}
-                  >
-                    <span style={{ textAlign: "right" }}>
-                      <p
-                        style={{
-                          fontFamily: "Rubik",
-                          fontStyle: "normal",
-                          fontWeight: "700",
-                          fontSize: "14px",
-                          lineHeight: "36px",
-                          textAlign: "right",
-                          color: "#F0863A",
-                        }}
-                      >
-                        הצעה למימון
-                      </p>
-                      <p>
-                        החל מהחזר חודשי של :{" "}
-                        <span style={{ fontWeight: "700" }}>
-                          {" "}
-                          {carDetial.proposal + " " + "שח"}
-                        </span>
-                      </p>
+            <img
+              src={carDetial.img}
+              style={{
+                height: "100px",
+                width: "100%",
+                overflow: "hidden",
+                borderTopLeftRadius: "15px",
+                borderTopRightRadius: "15px",
+              }}
+            />
+            <h3 style={{ fontSize: "20px", font: "Robik", fontWeight: "700" }}>
+              {carDetial.name}
+            </h3>
+            <span className="flex" style={{ fontSize: "16px" }}>
+              <span class="material-icons">pin_drop</span>
+              <span>{carDetial.address}</span>
+            </span>
+            <h4>
+              <div>
+                <div
+                  style={{
+                    display: "flex",
+                    gap: "10px",
+                    backgroundColor: "#E2F1FF",
+                    padding: "8px",
+                    fontSize: "14px",
+                  }}
+                >
+                  <span style={{ textAlign: "right" }}>
+                    <span
+                      style={{
+                        fontFamily: "Rubik",
+                        fontStyle: "normal",
+                        fontWeight: "700",
+                        fontSize: "14px",
+                        lineHeight: "36px",
+                        textAlign: "right",
+                        color: "#F0863A",
+                        display: "block",
+                      }}
+                    >
+                      הצעה למימון
                     </span>
                     <span>
-                      <p
-                        style={{
-                          fontFamily: "Rubik",
-                          fontStyle: "normal",
-                          fontWeight: "700",
-                          fontSize: "14px",
-                          lineHeight: "36px",
-                          textAlign: "right",
-                          color: "#282932",
-                        }}
-                      >
-                        תוספות לעיסקה
-                      </p>
-                      <ul>
-                        {carDetial.adds.map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
-                      </ul>
-                    </span>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      gap: "10px",
-                      justifyContent: "space-around",
-                    }}
-                  >
-                    <span
-                      style={{
-                        display: "flex",
-                        gap: "2px",
-                        flexDirection: "column",
-                      }}
-                    >
-                      <span>שנת יצור</span>
-                      <span style={{ fontSize: "16px", fontWeight: "700" }}>
-                        {carDetial.manYear}
+                      החל מהחזר חודשי של :{" "}
+                      <span style={{ fontWeight: "700" }}>
+                        {" "}
+                        {carDetial.proposal + " " + "שח"}
                       </span>
                     </span>
+                  </span>
+                  <span>
                     <span
                       style={{
-                        display: "flex",
-                        gap: "2px",
-                        flexDirection: "column",
+                        fontFamily: "Rubik",
+                        fontStyle: "normal",
+                        fontWeight: "700",
+                        fontSize: "14px",
+                        lineHeight: "36px",
+                        textAlign: "right",
+                        color: "#282932",
                       }}
                     >
-                      <span>ק"מ</span>
-                      <span style={{ fontSize: "16px", fontWeight: "700" }}>
-                        {carDetial.km}
-                      </span>
+                      תוספות לעיסקה
                     </span>
-                    <span
-                      style={{
-                        display: "flex",
-                        gap: "2px",
-                        flexDirection: "column",
-                      }}
-                    >
-                      <span>יד</span>
-                      <span style={{ fontSize: "16px", fontWeight: "700" }}>
-                        {carDetial.yad}
-                      </span>
-                    </span>
-                    <span
-                      style={{
-                        display: "flex",
-                        gap: "2px",
-                        flexDirection: "column",
-                      }}
-                    >
-                      <span>גיר</span>
-                      <span style={{ fontSize: "16px", fontWeight: "700" }}>
-                        {carDetial.girType}
-                      </span>
-                    </span>
-                  </div>
+                    <ul>
+                      {carDetial.adds.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </span>
                 </div>
-              </Card.Text>
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                <button
-                  variant="primary"
+                <div
                   style={{
-                    width: "60%",
-                    color: "white",
-                    border: 0,
-                    height: "40px",
-                    background:
-                      "linear-gradient(93.23deg, #EF8539 8.5%, #F7A66C 100%)",
-                    boxShadow: "0px 9px 15px rgba(184, 95, 31, 0.6)",
-                    borderRadius: "40px",
+                    display: "flex",
+                    gap: "10px",
+                    justifyContent: "space-around",
+                    fontSize: "14px",
                   }}
                 >
                   <span
                     style={{
-                      fontSize: "18px",
-                      fontWeight: "700",
-                      lineHeight: "36px",
+                      display: "flex",
+                      gap: "2px",
+                      flexDirection: "column",
                     }}
                   >
-                    יצירת קשר
+                    <span>שנת יצור</span>
+                    <span style={{ fontSize: "16px", fontWeight: "700" }}>
+                      {carDetial.manYear}
+                    </span>
                   </span>
-                </button>
+                  <span
+                    style={{
+                      display: "flex",
+                      gap: "2px",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <span>ק"מ</span>
+                    <span style={{ fontSize: "16px", fontWeight: "700" }}>
+                      {carDetial.km}
+                    </span>
+                  </span>
+                  <span
+                    style={{
+                      display: "flex",
+                      gap: "2px",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <span>יד</span>
+                    <span style={{ fontSize: "16px", fontWeight: "700" }}>
+                      {carDetial.yad}
+                    </span>
+                  </span>
+                  <span
+                    style={{
+                      display: "flex",
+                      gap: "2px",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <span>גיר</span>
+                    <span style={{ fontSize: "16px", fontWeight: "700" }}>
+                      {carDetial.girType}
+                    </span>
+                  </span>
+                </div>
               </div>
-            </Card.Body>
-          </Card>
+            </h4>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <button
+                variant="primary"
+                style={{
+                  width: "60%",
+                  color: "white",
+                  border: 0,
+                  height: "40px",
+                  background:
+                    "linear-gradient(93.23deg, #EF8539 8.5%, #F7A66C 100%)",
+                  boxShadow: "0px 9px 15px rgba(184, 95, 31, 0.6)",
+                  borderRadius: "40px",
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: "18px",
+                    fontWeight: "700",
+                    lineHeight: "36px",
+                  }}
+                >
+                  יצירת קשר
+                </span>
+              </button>
+            </div>
+          </div>
         ))}
       </div>
     </div>

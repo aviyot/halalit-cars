@@ -1,0 +1,14 @@
+.inductors {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
+
+.detail-button {
+  width: 256px;
+  height: 58px;
+  background: linear-gradient(93.23deg, #ef8539 8.5%, #f7a66c 100%);
+  box-shadow: 0px 9px 15px rgba(184, 95, 31, 0.6);
+  border-radius: 40px;
+  border: 0;
+}

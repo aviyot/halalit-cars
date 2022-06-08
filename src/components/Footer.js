@@ -5,8 +5,8 @@ import logoTextBlue from "../../src/assets/logoTextBlue.png";
 
 export default function Footer() {
   return (
-    <nav className="navbar fixed-bottom footer  bg-white">
-      <span className="d-flex justify-content-between gap-4">
+    <nav className="flex fixed buttom-0 footer flex-just-between w-100 px-8">
+      <span className="flex flex-just-between gap-8">
         <a href="#">כל הזכיות שמורות</a>
         <span>|</span>
         <a href="#">חיפוש רכב</a>
@@ -22,10 +22,10 @@ export default function Footer() {
           alignItems: "center",
         }}
       >
-        <img style={{ width: "90px", height: "40px" }} src={logoBlue} />
+        <img style={{ width: "60px", height: "16px" }} src={logoBlue} />
 
         <img
-          style={{ width: "100px", height: "24px", color: "blue" }}
+          style={{ width: "80px", height: "16px", color: "blue" }}
           src={logoTextBlue}
         />
       </span>
