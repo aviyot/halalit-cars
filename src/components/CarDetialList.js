@@ -106,7 +106,7 @@ function CarDetialList({ selectedCarType, setSelectedCarType }) {
     <div
       style={{
         background: `url(${type_list_car_cover})`,
-        backgroundSize: "100% 30%",
+        backgroundSize: "100% 300px",
         backgroundRepeat: "no-repeat",
         paddingLeft: "20px",
         paddingRight: "20px",
