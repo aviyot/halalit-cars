@@ -45,10 +45,15 @@ export default function CarTypes({ setSelectedCarType }) {
   ]);
 
   return (
-    <div className="grid-md grid-lg gap-8">
+    <div
+      className="grid-md grid-lg gap-8"
+      style={{ paddingLeft: "20px", paddingRight: "20px" }}
+    >
       {carTypes.map((item) => (
         <div
-          style={{ boxShadow: "5px 10px 18px #888888" }}
+          style={{
+            background: "transparent",
+          }}
           onClick={() => {
             setSelectedCarType(item.name);
           }}
@@ -65,7 +70,11 @@ export default function CarTypes({ setSelectedCarType }) {
           >
             {item.name}
           </h3>
-          <img className="car-type-img" src={item.imgSrc} />
+          <div
+            style={{ boxShadow: "5px 10px 18px #888888", borderRadius: "2rem" }}
+          >
+            <img className="car-type-img" src={item.imgSrc} />
+          </div>
         </div>
       ))}
     </div>

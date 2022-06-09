@@ -106,11 +106,19 @@ function CarDetialList({ selectedCarType, setSelectedCarType }) {
     <div
       style={{
         background: `url(${type_list_car_cover})`,
-        backgroundSize: "100% 200px",
+        backgroundSize: "100% 30%",
         backgroundRepeat: "no-repeat",
+        paddingLeft: "20px",
+        paddingRight: "20px",
       }}
     >
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          marginBottom: "10%",
+        }}
+      >
         <h2
           style={{
             textAlign: "right",
@@ -169,6 +177,7 @@ function CarDetialList({ selectedCarType, setSelectedCarType }) {
               borderRadius: "15px",
               boxShadow: "5px 10px 18px #888888",
               paddingBottom: "20px",
+              backgroundColor: "white",
             }}
           >
             <img src={carDetial.img} className="car-detial-img" />

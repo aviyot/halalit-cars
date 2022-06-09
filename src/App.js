@@ -16,8 +16,6 @@ function App() {
         style={{
           marginTop: "50px",
           marginBottom: "50px",
-          marginLeft: "20px",
-          marginRight: "20px",
         }}
       >
         {!selectedCarType && <HomeAd />}
