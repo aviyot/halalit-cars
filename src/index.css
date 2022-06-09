@@ -83,6 +83,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
+    row-gap: 10px;
+    column-gap: 10px;
   }
   .nav-lg {
     display: none;
@@ -97,6 +99,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-items: center;
+    row-gap: 50px;
+    column-gap: 50px;
   }
   .nav-lg {
     display: flex;

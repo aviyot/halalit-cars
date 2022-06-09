@@ -160,10 +160,7 @@ function CarDetialList({ selectedCarType, setSelectedCarType }) {
           </span>
         </button>
       </div>
-      <div
-        className="grid-md grid-lg"
-        style={{ gridRowGap: "50px", gridColumnGap: "50px" }}
-      >
+      <div className="grid-md grid-lg">
         {carDetialList.map((carDetial) => (
           <div
             key={carDetial.name}
