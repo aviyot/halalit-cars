@@ -13,7 +13,7 @@ export default function Footer() {
         <a href="#">בדיקת ממון</a>
         <a href="#">פרסם מודעה</a>
 
-        <a href="#">רישום לנזיוזלטר</a>
+        {/* <a href="#">רישום לנזיוזלטר</a> */}
       </span>
       <span
         style={{
