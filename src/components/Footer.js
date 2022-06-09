@@ -8,9 +8,9 @@ export default function Footer() {
     <nav className="flex fixed buttom-0 footer flex-just-between w-100 px-8">
       <span className="flex flex-just-between gap-8">
         <a href="#">כל הזכיות שמורות</a>
-        <span>|</span>
+        {/*     <span>|</span>
         <a href="#">חיפוש רכב</a>
-        <a href="#">בדיקת ממון</a>
+        <a href="#">בדיקת ממון</a> */}
         {/* <a href="#">פרסם מודעה</a> */}
 
         {/* <a href="#">רישום לנזיוזלטר</a> */}
