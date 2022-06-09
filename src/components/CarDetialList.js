@@ -172,16 +172,7 @@ function CarDetialList({ selectedCarType, setSelectedCarType }) {
               paddingBottom: "20px",
             }}
           >
-            <img
-              src={carDetial.img}
-              style={{
-                height: "100px",
-                width: "100%",
-                overflow: "hidden",
-                borderTopLeftRadius: "15px",
-                borderTopRightRadius: "15px",
-              }}
-            />
+            <img src={carDetial.img} className="car-detial-img" />
             <h3 style={{ fontSize: "20px", font: "Robik", fontWeight: "700" }}>
               {carDetial.name}
             </h3>

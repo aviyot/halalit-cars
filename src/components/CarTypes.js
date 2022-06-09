@@ -65,10 +65,7 @@ export default function CarTypes({ setSelectedCarType }) {
           >
             {item.name}
           </h3>
-          <img
-            src={item.imgSrc}
-            style={{ height: "200px", width: "300px", borderRadius: "1rem" }}
-          />
+          <img className="car-type-img" src={item.imgSrc} />
         </div>
       ))}
     </div>

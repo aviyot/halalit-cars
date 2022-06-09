@@ -3,14 +3,6 @@ nav {
   color: white;
 }
 
-.nav-lg {
-  display: flex;
-}
-
-.nav-sm {
-  display: none;
-}
-
 button img {
   width: "8px";
   height: "8px";
