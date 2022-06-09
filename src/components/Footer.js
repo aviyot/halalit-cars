@@ -11,7 +11,7 @@ export default function Footer() {
         <span>|</span>
         <a href="#">חיפוש רכב</a>
         <a href="#">בדיקת ממון</a>
-        <a href="#">פרסם מודעה</a>
+        {/* <a href="#">פרסם מודעה</a> */}
 
         {/* <a href="#">רישום לנזיוזלטר</a> */}
       </span>
