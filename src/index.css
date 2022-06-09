@@ -92,9 +92,15 @@
   .nav-sm {
     display: flex;
   }
+  .footer-lg {
+    display: none;
+  }
+  .footer-md {
+    display: flex;
+  }
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   .grid-lg {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -107,6 +113,13 @@
   }
 
   .nav-sm {
+    display: none;
+  }
+
+  .footer-lg {
+    display: flex;
+  }
+  .footer-md {
     display: none;
   }
 }

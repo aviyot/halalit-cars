@@ -6,14 +6,16 @@ import logoTextBlue from "../../src/assets/logoTextBlue.png";
 export default function Footer() {
   return (
     <nav className="flex fixed buttom-0 footer flex-just-between w-100 px-8">
-      <span className="flex flex-just-between gap-8">
+      <span className="flex flex-just-between gap-8 footer-md">
         <a href="#">כל הזכיות שמורות</a>
-        {/*     <span>|</span>
+      </span>
+      <span className="flex flex-just-between gap-8 footer-lg">
+        <a href="#">כל הזכיות שמורות</a>
+        <span>|</span>
         <a href="#">חיפוש רכב</a>
-        <a href="#">בדיקת ממון</a> */}
-        {/* <a href="#">פרסם מודעה</a> */}
-
-        {/* <a href="#">רישום לנזיוזלטר</a> */}
+        <a href="#">בדיקת ממון</a>
+        <a href="#">פרסם מודעה</a>
+        <a href="#">רישום לנזיוזלטר</a>
       </span>
       <span
         style={{
