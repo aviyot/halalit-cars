@@ -160,13 +160,15 @@ function CarDetialList({ selectedCarType, setSelectedCarType }) {
           </span>
         </button>
       </div>
-      <div className="grid-md grid-lg" style={{ gridRowGap: "50px" }}>
+      <div
+        className="grid-md grid-lg"
+        style={{ gridRowGap: "50px", gridColumnGap: "50px" }}
+      >
         {carDetialList.map((carDetial) => (
           <div
             key={carDetial.name}
             style={{
-              minWidth: "200px",
-              maxWidth: "300px",
+              Width: "100%",
               borderRadius: "15px",
               boxShadow: "5px 10px 18px #888888",
               paddingBottom: "20px",
@@ -241,6 +243,7 @@ function CarDetialList({ selectedCarType, setSelectedCarType }) {
                     gap: "10px",
                     justifyContent: "space-around",
                     fontSize: "14px",
+                    flexWrap: "wrap",
                   }}
                 >
                   <span
