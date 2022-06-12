@@ -13,6 +13,17 @@
 .flex {
   display: flex;
 }
+
+.dir-col {
+  flex-direction: column;
+}
+.align-self-end {
+  align-self: flex-end;
+}
+.align-self-center {
+  align-self: center;
+}
+
 .grid {
   display: grid;
 }
@@ -22,6 +33,9 @@
 
 .flex-just-between {
   justify-content: space-between;
+}
+.flex-just-around {
+  justify-content: space-around;
 }
 .flex-just-center {
   justify-content: center;
@@ -135,4 +149,11 @@
   height: 100px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+}
+
+.w-100 {
+  width: 100%;
+}
+.h-100 {
+  width: 100%;
 }
