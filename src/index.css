@@ -1,4 +1,4 @@
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css");
+/* @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css"); */
 ::placeholder {
   color: #0e69ac;
   opacity: 1;
@@ -10,6 +10,16 @@
   font-size: 17px;
 }
 
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Rubik";
+  margin: 0;
+  height: 100%;
+}
 .flex {
   display: flex;
 }
@@ -80,6 +90,10 @@
   width: 100%;
 }
 
+.h-100 {
+  height: 100%;
+}
+
 .px-8 {
   padding: 0 8px;
 }
@@ -92,7 +106,7 @@
   border-radius: 100%;
 }
 
-@media only screen and (min-width: 0px) {
+@media (min-width: 0px) {
   .grid-md {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -110,6 +124,13 @@
     display: none;
   }
   .footer-md {
+    display: flex;
+  }
+
+  .d-lg {
+    display: none;
+  }
+  .d-md {
     display: flex;
   }
 }
@@ -136,6 +157,12 @@
   .footer-md {
     display: none;
   }
+  .d-lg {
+    display: flex;
+  }
+  .d-md {
+    display: none;
+  }
 }
 
 .car-type-img {
@@ -151,9 +178,99 @@
   border-top-right-radius: 15px;
 }
 
-.w-100 {
-  width: 100%;
+.fs-16 {
+  font-size: 16px;
 }
-.h-100 {
-  width: 100%;
+.fs-18 {
+  font-size: 18px;
+}
+.fs-20 {
+  font-size: 20px;
+}
+
+.fs-24 {
+  font-size: 24px;
+}
+
+.fs-26 {
+  font-size: 26px;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+.fw-700 {
+  font-weight: 700;
+}
+
+.ff-roubick {
+  font-family: "Rubik";
+}
+
+.po-rel {
+  position: relative;
+}
+
+.po-abs {
+  position: absolute;
+}
+.bg-black {
+  background-color: black;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.m-8 {
+  margin: 8px;
+}
+
+.br-100 {
+  border-radius: 100%;
+}
+
+.d-ib {
+  display: inline-block;
+}
+
+.g-8f {
+  gap: 8px;
+}
+
+.w-8f {
+  width: 8px;
+}
+.w-8f {
+  height: 8px;
+}
+
+.p-32f {
+  padding: 32px;
+}
+.m-32f {
+  margin-bottom: 32px;
+}
+
+.f-g-1f {
+  flex-grow: 1;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.p-16f {
+  padding: 16px;
+}
+
+.g-32f {
+  gap: 32px;
+}
+.bg-grey {
+  background-color: grey;
 }
