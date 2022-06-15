@@ -1,27 +1,28 @@
 import "./CarDetial.css";
-import CarTypes from "./CarTypes";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import { faShekelSign, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {
+  faShekelSign,
+  faEnvelope,
+  faLocationDot,
+} from "@fortawesome/free-solid-svg-icons";
 
 <FontAwesomeIcon icon="fa-solid fa-envelope" />;
 
 const CarDetial = ({ carDetial, setCarDetial }) => {
   return (
     <>
-      <div className="flex w-100 h-100 dir-col p-8 ff-rubik d-md">
+      <div className="cmp-mobile flex w-100 h-100 dir-col p-8 ff-rubik d-md">
         <div className="flex flex-just-between ">
           <div className="flex dir-col align-self-center">
-            <span
-              className="fw-700 fs-26"
-              style={{
-                color: "#378AD7",
-              }}
-            >
-              {carDetial.name}
+            <span className="fw-700 fs-26 c--prim1">{carDetial.name}</span>
+            <span className="fw-400 fs-18 flex g-8f">
+              <span>
+                <FontAwesomeIcon icon={faLocationDot} />
+              </span>
+              <span>{carDetial.address}</span>
             </span>
-            <span className="fw-400 fs-18">{carDetial.address}</span>
           </div>
           <button
             className="bg-trans b-0"
@@ -88,18 +89,20 @@ const CarDetial = ({ carDetial, setCarDetial }) => {
           </div>
         </div>
         <div
-          className="flex flex-just-between flex-align-center "
+          className="flex flex-just-between flex-align-center bg--prim3"
           style={{
             flexBasis: "120px",
-            backgroundColor: "#D7E8F7",
             boxShadow: "0px 3px 9px rgba(0, 0, 0, 0.13)",
             marginBottom: "36px",
           }}
         >
-          <div className="flex dir-col flex-align-center" style={{ flex: "1" }}>
+          <div
+            className="flex dir-col flex-align-center g-8f"
+            style={{ flex: "1" }}
+          >
             <span className="ff-rubik fw-400 fs-20">מחיר</span>
             <span>
-              <span className="ff-rubik fw-500 fs-24">{carDetial.price}</span>
+              <span className="ff-rubik fw-bold fs--1">{carDetial.price}</span>
               <FontAwesomeIcon icon={faShekelSign} />
             </span>
           </div>
@@ -109,10 +112,13 @@ const CarDetial = ({ carDetial, setCarDetial }) => {
               transform: "rotate(90deg)",
             }}
           />
-          <div className="flex dir-col flex-align-center" style={{ flex: "1" }}>
+          <div
+            className="flex dir-col flex-align-center g-8f"
+            style={{ flex: "1" }}
+          >
             <span className="ff-rubik fw-400 fs-20">הצעת מימון</span>
             <span>
-              <span className="ff-rubik fw-500 fs-24">
+              <span className="ff-rubik fw-bold fs--1">
                 {carDetial.proposal}
               </span>
               <FontAwesomeIcon icon={faShekelSign} />
@@ -142,29 +148,29 @@ const CarDetial = ({ carDetial, setCarDetial }) => {
         </div>
         <div className="flex dir-col p-8 gap-8 m-32f  ">
           <div className="flex">
-            <span>פרטי הרכב</span>
+            <span className="fs--4 fw-bold pb--3">פרטי הרכב</span>
           </div>
           <div className="flex flex-just-between">
             <span className="fs-16 fw-400">קילומטר נוכחי:</span>
-            <span className="fs-16 fw-500">{carDetial.km}</span>
+            <span className="fs--4 fw-bold">{carDetial.km}</span>
           </div>
           <div className="flex flex-just-between">
             <span className="fs-16 fw-400">סוג מנוע:</span>
-            <span className="fs-16 fw-500">
+            <span className="fs--4 fw-bold">
               {carDetial.engineSize} ליטר {carDetial.engineType}
             </span>
           </div>
           <div className="flex flex-just-between">
             <span className="fs-16 fw-400">בעלות מקורית:</span>
-            <span className="fs-16 fw-500">{carDetial.balut}</span>
+            <span className="fs--4 fw-bold">{carDetial.balut}</span>
           </div>
           <div className="flex flex-just-between">
             <span className="fs-16 fw-400">תיבת הילוכים:</span>
-            <span className="fs-16 fw-500">{carDetial.girType}</span>
+            <span className="fs--4 fw-bold">{carDetial.girType}</span>
           </div>
           <div className="flex flex-just-between">
             <span className="fs-16 fw-400">צבע:</span>
-            <span className="fs-16 fw-500">{carDetial.color}</span>
+            <span className="fs--4 fw-bold">{carDetial.color}</span>
           </div>
           <div className="flex flex-just-between">
             <span className="fs-16 fw-400">דגם:</span>
@@ -172,11 +178,11 @@ const CarDetial = ({ carDetial, setCarDetial }) => {
           </div>
           <div className="flex flex-just-between">
             <span className="fs-16 fw-400">שנה:</span>
-            <span className="fs-16 fw-500">{carDetial.manYear}</span>
+            <span className="fs--4 fw-bold">{carDetial.manYear}</span>
           </div>
           <div className="flex flex-just-between">
             <span className="fs-16 fw-400">יד:</span>
-            <span className="fs-16 fw-500">{carDetial.yad}</span>
+            <span className="fs--4 fw-bold">{carDetial.yad}</span>
           </div>
         </div>
         <div className="flex dir-col  flex-align-center p-8">
@@ -192,12 +198,12 @@ const CarDetial = ({ carDetial, setCarDetial }) => {
         >
           <div>
             <span class="material-icons">phone_in_talk</span>
-            <span>צור קשר:</span>
-            <span> {carDetial.tel}</span>
+            <span className="fw-bold">צור קשר:</span>
+            <span className="c--prim2"> {carDetial.tel}</span>
           </div>
           <div>
             <span class="material-icons">person</span>
-            <span>שם:</span>
+            <span className="fw-bold">שם:</span>
             <span>{carDetial.contactName}</span>
           </div>
         </div>
@@ -207,14 +213,21 @@ const CarDetial = ({ carDetial, setCarDetial }) => {
           <div className="flex flex-just-between ">
             <div className="flex dir-col align-self-center">
               <span
-                className="fw-700 fs-26"
+                className="fw-700 "
                 style={{
                   color: "#378AD7",
+                  fontSize: "48px",
                 }}
               >
                 {carDetial.name}
               </span>
-              <span className="fw-400 fs-18">{carDetial.address}</span>
+
+              <span className="fw-400 fs-18 flex g-8f">
+                <span>
+                  <FontAwesomeIcon icon={faLocationDot} />
+                </span>
+                <span>{carDetial.address}</span>
+              </span>
             </div>
             <button
               className="bg-trans b-0"
@@ -240,43 +253,40 @@ const CarDetial = ({ carDetial, setCarDetial }) => {
             </button>
           </div>
         </div>
-        <div className="cmp-body flex g-32f  f-g-1f">
-          <div className="cmp-right f-g-1f flex dir-col">
+        <div className="cmp-body flex g-32f  f-g-1f ">
+          <div className="cmp-right f-g-1f flex dir-col fb-50">
             <div className="cmp-proposal f-g-1f ">
               <div
-                className="flex flex-just-between flex-align-center "
+                className="flex flex-just-between mb-32f p--1"
                 style={{
-                  flexBasis: "120px",
-                  backgroundColor: "#D7E8F7",
+                  backgroundColor: "rgba(215, 232, 247, 0.4)",
                   boxShadow: "0px 3px 9px rgba(0, 0, 0, 0.13)",
-                  marginBottom: "36px",
                 }}
               >
                 <div
-                  className="flex dir-col flex-align-center"
+                  className="flex dir-col flex-align-center as-center br-small "
                   style={{ flex: "1" }}
                 >
-                  <span className="ff-rubik fw-400 fs-20">מחיר</span>
+                  <span className="ff-rubik fw-400 fs--4 p--4">
+                    הצעה הסוכנות
+                  </span>
+                  <span className="ff-rubik fw-bold fs--2">מחיר</span>
                   <span>
-                    <span className="ff-rubik fw-500 fs-24">
+                    <span className="ff-rubik fw-bold fs--1">
                       {carDetial.price}
                     </span>
                     <FontAwesomeIcon icon={faShekelSign} />
                   </span>
                 </div>
-                <hr
-                  style={{
-                    flexBasis: "80px",
-                    transform: "rotate(90deg)",
-                  }}
-                />
+                <hr style={{ color: "grey" }} />
                 <div
-                  className="flex dir-col flex-align-center"
+                  className="flex dir-col flex-align-center as-center br-small"
                   style={{ flex: "1" }}
                 >
-                  <span className="ff-rubik fw-400 fs-20">הצעת מימון</span>
+                  <span className="ff-rubik fw-400 fs--4 p--4">הצעת מימון</span>
+                  <span className="fw-bold fs--2">החזר חודשי</span>
                   <span>
-                    <span className="ff-rubik fw-500 fs-24">
+                    <span className="ff-rubik fw-bold fs--1">
                       {carDetial.proposal}
                     </span>
                     <FontAwesomeIcon icon={faShekelSign} />
@@ -286,13 +296,13 @@ const CarDetial = ({ carDetial, setCarDetial }) => {
             </div>
             <div className="cmp-contact f-g-1f ">
               <div
-                className="flex flex-just-center dir-col flex-align-center m-8 p-32f gap-8"
+                className="flex flex-just-center dir-col flex-align-center p-32f gap-8"
                 style={{ background: "rgba(215, 232, 247, 0.4)" }}
               >
                 <div>
                   <span class="material-icons">phone_in_talk</span>
                   <span>צור קשר:</span>
-                  <span> {carDetial.tel}</span>
+                  <span className="c--prim2"> {carDetial.tel}</span>
                 </div>
                 <div>
                   <span class="material-icons">person</span>
@@ -301,49 +311,81 @@ const CarDetial = ({ carDetial, setCarDetial }) => {
                 </div>
               </div>
             </div>
-            <div className="cmp-car-detial f-g-1f ">
-              <div className="flex dir-col p-8 gap-8 m-32f  ">
+            <div className="cmp-car-detial flex f-g-1f  g-32f">
+              <div className="flex dir-col p-8 gap-8  f-g-1f  fb-50">
                 <div className="flex">
-                  <span>פרטי הרכב</span>
+                  <h3 className="fs--3 fw-bold">פרטי הרכב</h3>
                 </div>
                 <div className="flex flex-just-between">
                   <span className="fs-16 fw-400">קילומטר נוכחי:</span>
-                  <span className="fs-16 fw-500">{carDetial.km}</span>
+                  <span className="fs--4 fw-bold">{carDetial.km}</span>
                 </div>
                 <div className="flex flex-just-between">
                   <span className="fs-16 fw-400">סוג מנוע:</span>
-                  <span className="fs-16 fw-500">
+                  <span className="fs--4 fw-bold">
                     {carDetial.engineSize} ליטר {carDetial.engineType}
                   </span>
                 </div>
                 <div className="flex flex-just-between">
                   <span className="fs-16 fw-400">בעלות מקורית:</span>
-                  <span className="fs-16 fw-500">{carDetial.balut}</span>
+                  <span className="fs--4 fw-bold">{carDetial.balut}</span>
                 </div>
                 <div className="flex flex-just-between">
                   <span className="fs-16 fw-400">תיבת הילוכים:</span>
-                  <span className="fs-16 fw-500">{carDetial.girType}</span>
+                  <span className="fs--4 fw-bold">{carDetial.girType}</span>
                 </div>
                 <div className="flex flex-just-between">
                   <span className="fs-16 fw-400">צבע:</span>
-                  <span className="fs-16 fw-500">{carDetial.color}</span>
+                  <span className="fs--4 fw-bold">{carDetial.color}</span>
                 </div>
                 <div className="flex flex-just-between">
                   <span className="fs-16 fw-400">דגם:</span>
-                  <span className="fs-16 fw-500">{carDetial.model}</span>
+                  <span className="fs--4 fw-bold">{carDetial.model}</span>
                 </div>
                 <div className="flex flex-just-between">
                   <span className="fs-16 fw-400">שנה:</span>
-                  <span className="fs-16 fw-500">{carDetial.manYear}</span>
+                  <span className="fs--4 fw-bold">{carDetial.manYear}</span>
                 </div>
                 <div className="flex flex-just-between">
                   <span className="fs-16 fw-400">יד:</span>
-                  <span className="fs-16 fw-500">{carDetial.yad}</span>
+                  <span className="fs--4 fw-bold">{carDetial.yad}</span>
+                </div>
+              </div>
+              <hr />
+              <div className="f-g-1f fb-50">
+                <div>
+                  <h3 className="fs--4"> תוספות לעיסקה:</h3>
+                  <ul className="c--prim2">
+                    {carDetial.adds.map((add) => (
+                      <li>{add}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h3 style={{ color: "#F0863A" }}>הצעות למימון:</h3>
+                  <ul>
+                    <li>
+                      <span></span>
+                      <span>
+                        <span>
+                          <span>החל מהחזר חודשי של :</span>
+                          <span className="fw-bold">{carDetial.proposal}</span>
+                        </span>
+                        <span className="fw-bold">
+                          ש"ח
+                          {/*     <FontAwesomeIcon
+                            icon={faShekelSign}
+                            className="fs--4"
+                          /> */}
+                        </span>
+                      </span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
-          <div className="cmp-left flex dir-col f-g-1f ">
+          <div className="cmp-left flex dir-col f-g-1f  fb-50">
             <div className="cmp-img  f-g-1f">
               <div
                 className="flex h-100 flex-just-center"
