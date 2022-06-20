@@ -8,7 +8,7 @@ import searchWhiteIcon from "../../src/assets/searchWhiteIcon.png";
 import arow from "../../src/assets/arow.png";
 import "./Header.css";
 
-function Header() {
+function Header({ selectedUI, setSelectedUI }) {
   return (
     <div className="fixed" style={{ width: "100%", top: "0", zIndex: "100" }}>
       <nav
@@ -20,9 +20,26 @@ function Header() {
           <img style={{ width: "100px", height: "20px" }} src={logoText} />
         </span>
         <div className="flex gap-8">
-          <button className="bg-trans b-0">
-            <img style={{ height: "20px" }} src={filterIcon} />
-          </button>
+          <div className="as-center">
+            <button
+              className="bg-trans b-0   br-100"
+              onClick={() => {
+                if (selectedUI !== "CAR_FILTER_RESULT") {
+                  setSelectedUI("CAR_FILTER_RESULT");
+                } else {
+                  setSelectedUI("HOME");
+                }
+              }}
+              style={{
+                backgroundColor:
+                  selectedUI === "CAR_FILTER_RESULT"
+                    ? "rgba(200,200,200)"
+                    : "transparent",
+              }}
+            >
+              <img style={{ height: "20px" }} src={filterIcon} />
+            </button>
+          </div>
           <button
             className="bg-trans b-0"
             style={{ backgroundColor: "#378AD7" }}
@@ -93,7 +110,22 @@ function Header() {
           <img style={{ width: "100px", height: "20px" }} src={logoText} />
         </span>
         <span>
-          <button className="bg-trans b-0">
+          <button
+            className="bg-trans b-0"
+            onClick={() => {
+              if (selectedUI !== "CAR_FILTER_RESULT") {
+                setSelectedUI("CAR_FILTER_RESULT");
+              } else {
+                setSelectedUI("HOME");
+              }
+            }}
+            style={{
+              backgroundColor:
+                selectedUI === "CAR_FILTER_RESULT"
+                  ? "rgba(200,200,200)"
+                  : "transparent",
+            }}
+          >
             <img style={{ height: "20px" }} src={filterIcon} />
           </button>
           <button className="bg-trans b-0">

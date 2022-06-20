@@ -3,12 +3,6 @@ nav {
   color: white;
 }
 
-button img {
-  width: "8px";
-  height: "8px";
-  align-self: "center";
-}
-
 .search-input {
   height: 40px;
   border-radius: 30px;

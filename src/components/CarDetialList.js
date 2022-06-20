@@ -12,7 +12,7 @@ import keyHold from "../assets/keyHold.png";
 import type_list_car_cover from "../assets/type_list_car_cover.png";
 import CarDetial from "./CarDetial";
 
-function CarDetialList({ selectedCarType, setSelectedCarType }) {
+function CarDetialList({ selectedCarType, setSelectedCarType, setSelectedUI }) {
   const [carDetial, setCarDetial] = useState(null);
 
   const [carDetialList, setCarDetialList] = useState([
@@ -85,7 +85,7 @@ function CarDetialList({ selectedCarType, setSelectedCarType }) {
       engineSize: "1399",
     },
     {
-      name: "AMBITION סקודה אוקטביה",
+      name: "CX-5 LUXURY מאזדה",
       img: car6,
       address: "אשדוד",
       proposal: 300,
@@ -182,6 +182,7 @@ function CarDetialList({ selectedCarType, setSelectedCarType }) {
               }}
               onClick={() => {
                 setSelectedCarType(null);
+                setSelectedUI("HOME");
               }}
             >
               <span className="flex" style={{ justifyContent: "space-around" }}>

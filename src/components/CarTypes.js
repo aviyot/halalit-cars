@@ -8,7 +8,7 @@ import ofona from "../assets/carTypes/ofona.png";
 import prati from "../assets/carTypes/prati.png";
 import shait from "../assets/carTypes/shait.png";
 
-export default function CarTypes({ setSelectedCarType }) {
+export default function CarTypes({ setSelectedCarType, setSelectedUI }) {
   const [carTypes, setCarTypes] = useState([
     {
       name: "ליסינג",
@@ -51,11 +51,13 @@ export default function CarTypes({ setSelectedCarType }) {
     >
       {carTypes.map((item) => (
         <div
+          key={item.name}
           style={{
             background: "transparent",
           }}
           onClick={() => {
             setSelectedCarType(item.name);
+            setSelectedUI("CAR_DETIAL_LIST");
           }}
         >
           <h3
