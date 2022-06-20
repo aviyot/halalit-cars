@@ -25,7 +25,7 @@ const CarDetial = ({ carDetial, setCarDetial }) => {
             </span>
           </div>
           <button
-            className="bg-trans b-0"
+            className="bg-trans b-0 as-center"
             style={{
               alignSelf: "center",
               margin: "2rem",
