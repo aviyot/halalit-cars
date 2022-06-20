@@ -1,7 +1,7 @@
 /* @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css"); */
 
 :root {
-  --prim-1: #378ad7;
+  --prim-1: rgb(55, 138, 215);
   --prim-2: #6ebdf7;
   --prim-3: rgba(215, 232, 247, 0.4);
 
@@ -52,11 +52,30 @@ body {
 .flex {
   display: flex;
 }
+.d-flex {
+  display: flex;
+}
+.d-grid {
+  display: grid;
+}
+.d-block {
+  display: block;
+}
+.d-inline {
+  display: inline;
+}
 
 .dir-col {
   flex-direction: column;
 }
+.fd-column {
+  flex-direction: column;
+}
 .align-self-end {
+  align-self: flex-end;
+}
+
+.as-flex-end {
   align-self: flex-end;
 }
 .align-self-center {
