@@ -2,9 +2,9 @@ import React, { useState } from "react";
 
 const FilterBox = ({ filterType }) => {
   return (
-    <div>
+    <div className="d-flex ">
       <span>
-        <label>{filterType.label}</label>
+        <label className="ws-nowarp">{filterType.label}</label>
       </span>
       <span>
         <input></input>
@@ -64,7 +64,7 @@ const CarFilter = () => {
   ]);
 
   return (
-    <div>
+    <div className="d-flex fd-column g-8  ">
       <div>
         <span>סינון</span>
         <span>
@@ -72,12 +72,12 @@ const CarFilter = () => {
           <span>נקה הכל</span>
         </span>
       </div>
-      <div>
+      <div className="d-flex fd-column g-8px">
         {filterTypes.map((filterType) => (
           <FilterBox filterType={filterType} key={filterType.label} />
         ))}
       </div>
-      <div>
+      <div className="as-center">
         <div>
           <span>חיפוש מתקדם</span>
         </div>
@@ -85,8 +85,8 @@ const CarFilter = () => {
           <span>חיפושים אחרונים</span>
         </div>
       </div>
-      <div>
-        <button>חפש</button>
+      <div className="as-center">
+        <button className="bg-transparent b-0 c-white">חפש</button>
       </div>
     </div>
   );

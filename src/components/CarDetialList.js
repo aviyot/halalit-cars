@@ -1,137 +1,25 @@
 import React, { useState } from "react";
-import car1 from "../assets/car-list-lising/car1.png";
-import car2 from "../assets/car-list-lising/car2.png";
-import car3 from "../assets/car-list-lising/car3.png";
-import car4 from "../assets/car-list-lising/car4.png";
-import car5 from "../assets/car-list-lising/car5.png";
-import car6 from "../assets/car-list-lising/car6.png";
-import car7 from "../assets/car-list-lising/car7.png";
-import car8 from "../assets/car-list-lising/car8.png";
+import car_detail_list from "../data/car_detail_list.json";
 import key from "../assets/key.png";
 import keyHold from "../assets/keyHold.png";
 import type_list_car_cover from "../assets/type_list_car_cover.png";
+import CarCard from "./CarCard";
 import CarDetial from "./CarDetial";
 
 function CarDetialList({ selectedCarType, setSelectedCarType, setSelectedUI }) {
   const [carDetial, setCarDetial] = useState(null);
+  const [carDetialList] = useState(car_detail_list);
 
-  const [carDetialList, setCarDetialList] = useState([
-    {
-      name: " LT שברולוט ספארק",
-      img: car1,
-      address: "נתניה",
-      proposal: 300,
-      adds: ["הצעה לבדיקת גיר", "אחריות יצרן", "מנוע ושילדה"],
-      manYear: "2022",
-      km: 3000,
-      yad: 2,
-      girType: "אוטומטי",
-      engineSize: "1399",
-      engineType: "בנזין",
-      balut: "השכרה",
-      color: "לבן",
-      model: "ספארק LT",
-      price: 62900,
-      contactName: "עידן קלינסקי",
-      tel: "052-6481888",
-    },
-    {
-      name: "AMBITION סקודה אוקטביה",
-      img: car2,
-      address: "אשדוד",
-      proposal: 300,
-      adds: ["הצעה לבדיקת גיר", "אחריות יצרן", "מנוע ושילדה"],
-      manYear: "2022",
-      km: 3000,
-      yad: 2,
-      girType: "אוטומטי",
-      engineSize: "1399",
-    },
-    {
-      name: "PRIME PLUS יונדאי טוסון",
-      img: car3,
-      address: "אילת",
-      proposal: 300,
-      adds: ["הצעה לבדיקת גיר", "אחריות יצרן", "מנוע ושילדה"],
-      manYear: "2022",
-      km: 3000,
-      yad: 2,
-      girType: "אוטומטי",
-      engineSize: "1399",
-      engineType: "בנזין",
-    },
-    {
-      name: "SPORT מאזדה ",
-      img: car4,
-      address: "נתניה",
-      proposal: 300,
-      adds: ["הצעה לבדיקת גיר", "אחריות יצרן", "מנוע ושילדה"],
-      manYear: "2022",
-      km: 3000,
-      yad: 2,
-      girType: "אוטומטי",
-      engineSize: "1399",
-    },
-    {
-      name: "INTENSE רנו קפצ'ור",
-      img: car5,
-      address: "נתניה",
-      proposal: 300,
-      adds: ["הצעה לבדיקת גיר", "אחריות יצרן", "מנוע ושילדה"],
-      manYear: "2022",
-      km: 3000,
-      yad: 2,
-      girType: "אוטומטי",
-      engineSize: "1399",
-    },
-    {
-      name: "CX-5 LUXURY מאזדה",
-      img: car6,
-      address: "אשדוד",
-      proposal: 300,
-      adds: ["הצעה לבדיקת גיר", "אחריות יצרן", "מנוע ושילדה"],
-      manYear: "2022",
-      km: 3000,
-      yad: 2,
-      girType: "אוטומטי",
-      engineSize: "1399",
-    },
-    {
-      name: "CX-5 LUXURY מאזדה",
-      img: car7,
-      address: "אשדוד",
-      proposal: 300,
-      adds: ["הצעה לבדיקת גיר", "אחריות יצרן", "מנוע ושילדה"],
-      manYear: "2022",
-      km: 3000,
-      yad: 2,
-      girType: "אוטומטי",
-      engineSize: "1399",
-    },
-    {
-      name: "530E LINE 5 ב.מ.וו סדרה",
-      img: car8,
-      address: "חדרה",
-      proposal: 300,
-      adds: ["הצעה לבדיקת גיר", "אחריות יצרן", "מנוע ושילדה"],
-      manYear: "2022",
-      km: 3000,
-      yad: 2,
-      girType: "אוטומטי",
-      engineSize: "1399",
-    },
-  ]);
   return (
     <>
-      {" "}
       {!carDetial ? (
         <div
           style={{
             background: `url(${type_list_car_cover})`,
             backgroundSize: "100% 300px",
             backgroundRepeat: "no-repeat",
-            paddingLeft: "20px",
-            paddingRight: "20px",
+            paddingLeft: "12px",
+            paddingRight: "12px",
           }}
         >
           <div
@@ -191,172 +79,13 @@ function CarDetialList({ selectedCarType, setSelectedCarType, setSelectedUI }) {
               </span>
             </button>
           </div>
-          <div className="grid-md grid-lg">
+          <div className="grid-md grid-5">
             {carDetialList.map((carDetial) => (
-              <div
+              <CarCard
                 key={carDetial.name}
-                style={{
-                  Width: "100%",
-                  borderRadius: "15px",
-                  boxShadow: "5px 10px 18px #888888",
-                  paddingBottom: "20px",
-                  backgroundColor: "white",
-                }}
-                onClick={() => {
-                  setCarDetial(carDetial);
-                }}
-              >
-                <img src={carDetial.img} className="car-detial-img" />
-                <h3
-                  style={{ fontSize: "20px", font: "Robik", fontWeight: "700" }}
-                >
-                  {carDetial.name}
-                </h3>
-                <span className="flex" style={{ fontSize: "16px" }}>
-                  <span class="material-icons">pin_drop</span>
-                  <span>{carDetial.address}</span>
-                </span>
-                <h4>
-                  <div>
-                    <div
-                      style={{
-                        display: "flex",
-                        gap: "10px",
-                        backgroundColor: "#E2F1FF",
-                        padding: "8px",
-                        fontSize: "14px",
-                      }}
-                    >
-                      <span style={{ textAlign: "right" }}>
-                        <span
-                          style={{
-                            fontFamily: "Rubik",
-                            fontStyle: "normal",
-                            fontWeight: "700",
-                            fontSize: "14px",
-                            lineHeight: "36px",
-                            textAlign: "right",
-                            color: "#F0863A",
-                            display: "block",
-                          }}
-                        >
-                          הצעה למימון
-                        </span>
-                        <span>
-                          החל מהחזר חודשי של :{" "}
-                          <span style={{ fontWeight: "700" }}>
-                            {" "}
-                            {carDetial.proposal + " " + "שח"}
-                          </span>
-                        </span>
-                      </span>
-                      <span>
-                        <span
-                          style={{
-                            fontFamily: "Rubik",
-                            fontStyle: "normal",
-                            fontWeight: "700",
-                            fontSize: "14px",
-                            lineHeight: "36px",
-                            textAlign: "right",
-                            color: "#282932",
-                          }}
-                        >
-                          תוספות לעיסקה
-                        </span>
-                        <ul>
-                          {carDetial.adds.map((item) => (
-                            <li key={item}>{item}</li>
-                          ))}
-                        </ul>
-                      </span>
-                    </div>
-                    <div
-                      style={{
-                        display: "flex",
-                        gap: "10px",
-                        justifyContent: "space-around",
-                        fontSize: "14px",
-                        flexWrap: "wrap",
-                      }}
-                    >
-                      <span
-                        style={{
-                          display: "flex",
-                          gap: "2px",
-                          flexDirection: "column",
-                        }}
-                      >
-                        <span>שנת יצור</span>
-                        <span style={{ fontSize: "16px", fontWeight: "700" }}>
-                          {carDetial.manYear}
-                        </span>
-                      </span>
-                      <span
-                        style={{
-                          display: "flex",
-                          gap: "2px",
-                          flexDirection: "column",
-                        }}
-                      >
-                        <span>ק"מ</span>
-                        <span style={{ fontSize: "16px", fontWeight: "700" }}>
-                          {carDetial.km}
-                        </span>
-                      </span>
-                      <span
-                        style={{
-                          display: "flex",
-                          gap: "2px",
-                          flexDirection: "column",
-                        }}
-                      >
-                        <span>יד</span>
-                        <span style={{ fontSize: "16px", fontWeight: "700" }}>
-                          {carDetial.yad}
-                        </span>
-                      </span>
-                      <span
-                        style={{
-                          display: "flex",
-                          gap: "2px",
-                          flexDirection: "column",
-                        }}
-                      >
-                        <span>גיר</span>
-                        <span style={{ fontSize: "16px", fontWeight: "700" }}>
-                          {carDetial.girType}
-                        </span>
-                      </span>
-                    </div>
-                  </div>
-                </h4>
-                <div style={{ display: "flex", justifyContent: "center" }}>
-                  <button
-                    variant="primary"
-                    style={{
-                      width: "60%",
-                      color: "white",
-                      border: 0,
-                      height: "40px",
-                      background:
-                        "linear-gradient(93.23deg, #EF8539 8.5%, #F7A66C 100%)",
-                      boxShadow: "0px 9px 15px rgba(184, 95, 31, 0.6)",
-                      borderRadius: "40px",
-                    }}
-                  >
-                    <span
-                      style={{
-                        fontSize: "18px",
-                        fontWeight: "700",
-                        lineHeight: "36px",
-                      }}
-                    >
-                      יצירת קשר
-                    </span>
-                  </button>
-                </div>
-              </div>
+                carDetial={carDetial}
+                setCarDetial={setCarDetial}
+              />
             ))}
           </div>
         </div>

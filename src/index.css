@@ -27,6 +27,9 @@
 .c--prim3 {
   color: var(--prim-3);
 }
+.c-white {
+  color: white;
+}
 
 ::placeholder {
   color: #0e69ac;
@@ -125,6 +128,9 @@ body {
 .bg-trans {
   background-color: transparent;
 }
+.bg-transparent {
+  background: transparent;
+}
 
 .b-0 {
   border: 0;
@@ -194,6 +200,13 @@ body {
   .grid-lg {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    row-gap: 50px;
+    column-gap: 50px;
+  }
+  .grid-5 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     justify-items: center;
     row-gap: 50px;
     column-gap: 50px;
@@ -297,6 +310,13 @@ body {
   gap: 8px;
 }
 
+.g-8px {
+  gap: 8px;
+}
+.g-16px {
+  gap: 16px;
+}
+
 .w-8f {
   width: 8px;
 }
@@ -373,7 +393,13 @@ body {
 .fs--6 {
   font-size: 0.5rem;
 }
+.fs-0 {
+  flex-shrink: 0;
+}
 
+.fb-25 {
+  flex-basis: 25%;
+}
 .fb-40 {
   flex-basis: 40%;
 }
@@ -382,4 +408,12 @@ body {
 }
 .fb-60 {
   flex-basis: 60%;
+}
+
+.mw-300px {
+  min-width: 300px;
+}
+
+.ws-nowarp {
+  white-space: nowrap;
 }
