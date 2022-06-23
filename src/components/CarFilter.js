@@ -7,18 +7,29 @@ const FilterBox = ({ filterType }) => {
   const [selectedOption, setSelectedOption] = useState("");
 
   return (
-    <div className="m-8 mw-30 br-10 ">
-      <div className="d-flex m-8 p-relative ">
+    <div className="br-10 mw-250px">
+      <div className="d-flex p-relative ">
         <span className="fb-0px fs-0 fg-1 bc-white c-black bbrr-100 btrr-100 p-8">
           {filterType.req && <label>*</label>}
           <label className="ws-nowarp">{filterType.label}</label>
         </span>
-        <span className="fb-0px  fs-0  fg-1 bc-white c-black  p-8">
+        <span className="d-flex jc-space-between fb-0px  fs-0  fg-1 bc-white c-black  p-8">
           <span className="bc-white   c-black">{selectedOption}</span>
+          {selectedOption && (
+            <button
+              className="bc-transparent b-0 c-red"
+              onClick={() => {
+                setSelectedOption("");
+              }}
+            >
+              x
+            </button>
+          )}
           {showOptions && (
-            <ul className="p-absolute bc-black c-white zi-100 fb-60">
+            <div className=" p-absolute d-flex fd-column bc-grey c-white g-8px zi-100 fb-60">
               {filterType.opthion.map((opt) => (
-                <li
+                <div
+                  className="cm-filter-option m-0px p-8px"
                   onClick={() => {
                     setSelectedOption(opt);
                     setShowOpthions(false);
@@ -26,19 +37,20 @@ const FilterBox = ({ filterType }) => {
                   key={opt}
                 >
                   {opt}
-                </li>
+                </div>
               ))}
-            </ul>
+            </div>
           )}
         </span>
-        <button
-          className="fb-0px  fs-0  fg-1 bc-white   c-black btlr-100 bblr-100  p-8 b-0 bc-transparent"
-          onClick={() => {
-            showOptions ? setShowOpthions(false) : setShowOpthions(true);
-          }}
-        >
-          <FontAwesomeIcon icon={faCircleArrowDown} />
-        </button>
+        <span className="fb-0px fg-1  btlr-100 bblr-100 bc-white d-flex ai-center jc-center">
+          <FontAwesomeIcon
+            style={{ fill: "black" }}
+            icon={faCircleArrowDown}
+            onClick={() => {
+              showOptions ? setShowOpthions(false) : setShowOpthions(true);
+            }}
+          />
+        </span>
       </div>
     </div>
   );
@@ -112,37 +124,41 @@ const CarFilter = () => {
   ]);
 
   return (
-    <div className="d-flex fd-column g-8  ">
-      <div>
-        <div className="d-flex jc-space-between">
-          <span>סינון</span>
-          <span className="d-flex g-8px">
-            <span>x</span>
-            <span>נקה הכל</span>
-          </span>
-        </div>
-        <hr />
-      </div>
+    <div className="d-flex fd-column g-40px mr-8px ml-8px">
       <div className="d-flex fd-column">
-        {filterTypes.map((filterType) => (
-          <FilterBox
-            filterType={filterType}
-            clearFilter={clearFilter}
-            setClerFilter={setClerFilter}
-            key={filterType.label}
-          />
-        ))}
+        <div>
+          <div className="d-flex jc-space-between ai-center">
+            <span className="fw-600 fs-28px">סינון</span>
+            <span className="d-flex g-8px">
+              <span>x</span>
+              <span>נקה הכל</span>
+            </span>
+          </div>
+          <hr />
+        </div>
+        <div className="d-flex fd-column g-8px">
+          {filterTypes.map((filterType) => (
+            <FilterBox
+              filterType={filterType}
+              clearFilter={clearFilter}
+              setClerFilter={setClerFilter}
+              key={filterType.label}
+            />
+          ))}
+        </div>
       </div>
       <div className="as-center">
         <div>
-          <span>חיפוש מתקדם</span>
+          <span className="fs-22 fw-600">חיפוש מתקדם</span>
         </div>
         <div>
-          <span>חיפושים אחרונים</span>
+          <span className="fs-22">חיפושים אחרונים</span>
         </div>
       </div>
-      <div className="as-center">
-        <button className="bg-transparent b-0 c-white">חפש</button>
+      <div className="as-center w-100 d-flex jc-center">
+        <button className="b-0 c-white b-lg--1 bs--1 fs-30px br-40px w-80">
+          חפש
+        </button>
       </div>
     </div>
   );
