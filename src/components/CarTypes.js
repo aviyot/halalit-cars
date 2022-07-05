@@ -45,35 +45,20 @@ export default function CarTypes({ setSelectedCarType, setSelectedUI }) {
   ]);
 
   return (
-    <div
-      className="grid-md grid-lg gap-8"
-      style={{ paddingLeft: "20px", paddingRight: "20px" }}
-    >
+    <div className="grid-md grid-lg gap-8 pl-20px pr-20px">
       {carTypes.map((item) => (
         <div
+          className="bc-transparent"
           key={item.name}
-          style={{
-            background: "transparent",
-          }}
           onClick={() => {
             setSelectedCarType(item.name);
             setSelectedUI("CAR_DETIAL_LIST");
           }}
         >
-          <h3
-            style={{
-              marginRight: "1rem",
-              fontFamily: "Rubik",
-              fontStyle: "normal",
-              fontWeight: "500",
-              fontSize: "36px",
-              color: "#919497",
-            }}
-          >
-            {item.name}
-          </h3>
+          <h3 className="mr-12px ff-rubik fw-500 fs-36px">{item.name}</h3>
           <div
-            style={{ boxShadow: "5px 10px 18px #888888", borderRadius: "2rem" }}
+            className="br-24px"
+            style={{ boxShadow: "5px 10px 18px #888888" }}
           >
             <img className="car-type-img" src={item.imgSrc} />
           </div>

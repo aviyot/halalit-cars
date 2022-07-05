@@ -1,25 +1,20 @@
 import logo from "../../src/assets/logo.png";
 import logoText from "../../src/assets/logoText.png";
 import filterIcon from "../../src/assets/filterIcon.png";
-import arowUserIcon from "../../src/assets/arrowUserIcon.png";
 import themeIcon from "../../src/assets/themeIcon.png";
 import searchIcon from "../../src/assets/searchIcon.png";
 import searchWhiteIcon from "../../src/assets/searchWhiteIcon.png";
 import arow from "../../src/assets/arow.png";
-import "./Header.css";
 
 function Header({ selectedUI, setSelectedUI }) {
   return (
-    <div className="fixed" style={{ width: "100%", top: "0", zIndex: "100" }}>
-      <nav
-        className="flex flex-just-between nav-lg flex-align-center p-8"
-        style={{ height: "50px" }}
-      >
-        <span className="flex flex-align-center gap-8">
-          <img style={{ width: "100px", height: "20px" }} src={logo} />
-          <img style={{ width: "100px", height: "20px" }} src={logoText} />
+    <div className="d-fixed w-100 zi-100 top-0">
+      <nav className="d-flex flex-just-between nav-lg flex-align-center p-8 bg--prim1 c-white h-50px">
+        <span className="d-flex flex-align-center gap-8">
+          <img className="w-100px h-20px" src={logo} />
+          <img className="w-100px h-20px" src={logoText} />
         </span>
-        <div className="flex gap-8">
+        <div className="d-flex gap-8">
           <div className="as-center">
             <button
               className="bg-trans b-0   br-100"
@@ -37,18 +32,18 @@ function Header({ selectedUI, setSelectedUI }) {
                     : "transparent",
               }}
             >
-              <img style={{ height: "20px" }} src={filterIcon} />
+              <img className="h-20px" src={filterIcon} />
             </button>
           </div>
           <button
             className="bg-trans b-0"
             style={{ backgroundColor: "#378AD7" }}
           >
-            <img style={{ height: "20px" }} src={themeIcon} />
+            <img className="h-20px" src={themeIcon} />
           </button>
           <div
-            style={{ height: "30px" }}
-            className="flex flex-just-between none flex-align-center search-input px-8"
+            className="d-flex jc-space-between none ai-center pr-8px pl-8px h-40px br-30px ta-right bc-white"
+            style={{ color: "#0e69ac" }}
           >
             <label>חפש...</label>
             <input style={{ outline: "none", borderWidth: 0 }} type="search" />
@@ -57,57 +52,39 @@ function Header({ selectedUI, setSelectedUI }) {
             </button>
           </div>
 
-          <span className="flex  flex-align-center  flex-just-between">
-            <button className="bg-trans b-0">
+          <span className="flex flex-align-center flex-just-between">
+            <button className="bc-transparent b-0">
               <img src={arow} />
             </button>
             <button
-              style={{
-                borderRadius: "100%",
-                border: "1px white solid",
-                backgroundColor: "transparent",
-                color: "white",
-              }}
+              className="br-100 bc-transparent br-0  bs-solid bw-1px br-100"
+              style={{ borderColor: "white" }}
             >
-              <label
-                style={{
-                  text: "white",
-                }}
-              >
-                ע
-              </label>
+              <label className="c-white">ע</label>
             </button>
           </span>
         </div>
       </nav>
+
       <nav
-        className="flex flex-just-between nav-sm flex-align-center"
+        className="nav-sm d-flex flex-just-between flex-align-center p-8 bg--prim1 c-white h-30px px-8"
         style={{ height: "50px" }}
       >
         <span className="flex flex-align-center flex-just-between">
           <button
-            style={{
-              borderRadius: "100%",
-              border: "1px white solid",
-              backgroundColor: "transparent",
-              color: "white",
-            }}
+            className="br-100 bc-transparent br-0  bs-solid bw-1px br-100"
+            style={{ borderColor: "white" }}
           >
-            <label
-              style={{
-                text: "white",
-              }}
-            >
-              ע
-            </label>
+            <label className="c-white">ע</label>
           </button>
+
           <button className="bg-trans b-0">
             <img src={arow} />
           </button>
         </span>
         <span className="flex flex-align-center gap-8">
-          <img style={{ width: "100px", height: "20px" }} src={logo} />
-          <img style={{ width: "100px", height: "20px" }} src={logoText} />
+          <img className="w-100px h-20px" src={logo} />
+          <img className="w-100px h-20px" src={logoText} />
         </span>
         <span>
           <button
@@ -126,10 +103,10 @@ function Header({ selectedUI, setSelectedUI }) {
                   : "transparent",
             }}
           >
-            <img style={{ height: "20px" }} src={filterIcon} />
+            <img className="h-20px" src={filterIcon} />
           </button>
           <button className="bg-trans b-0">
-            <img style={{ height: "20px" }} src={searchWhiteIcon} />
+            <img className="h-20px" src={searchWhiteIcon} />
           </button>
         </span>
       </nav>

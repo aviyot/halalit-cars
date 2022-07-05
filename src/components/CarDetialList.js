@@ -14,41 +14,25 @@ function CarDetialList({ selectedCarType, setSelectedCarType, setSelectedUI }) {
     <>
       {!carDetial ? (
         <div
+          className="pl-12px pr-12px"
           style={{
             background: `url(${type_list_car_cover})`,
             backgroundSize: "100% 300px",
             backgroundRepeat: "no-repeat",
-            paddingLeft: "12px",
-            paddingRight: "12px",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              marginBottom: "10%",
-            }}
-          >
+          <div className="d-flex jc-space-between mb-10">
             <h2
+              className="ta-right ff-rubik fw-700 m-2px fs-56px"
               style={{
-                textAlign: "right",
                 color: "#E2E5E9",
-                fontFamily: "Rubik",
-                fontSize: "56px",
-                fontWeight: "700",
-                lineHeight: "36px",
-                letterSpacing: "0em",
-                margin: "2rem",
               }}
             >
               <div className="flex gap-8">
                 <div
-                  className="br-100"
+                  className="br-100 w-40px ta-center"
                   style={{
                     backgroundColor: "#EF8539",
-                    width: "40px",
-                    height: "40px",
-                    textAlign: "center",
                   }}
                 >
                   <img src={keyHold}></img>
@@ -58,14 +42,8 @@ function CarDetialList({ selectedCarType, setSelectedCarType, setSelectedUI }) {
               </div>
             </h2>
             <button
-              className="bg-trans b-0"
+              className="bg-trans b-0 ta-center br-30px w-120px h-40px"
               style={{
-                alignSelf: "center",
-                margin: "2rem",
-                borderRadius: "30px",
-                width: "120px",
-                height: "40px",
-                backgroundColor: "white",
                 color: "#378AD7",
               }}
               onClick={() => {
@@ -73,9 +51,9 @@ function CarDetialList({ selectedCarType, setSelectedCarType, setSelectedUI }) {
                 setSelectedUI("HOME");
               }}
             >
-              <span className="flex" style={{ justifyContent: "space-around" }}>
+              <span className="d-flex jc-space-around">
                 <span class="material-icons">arrow_forward</span>
-                <span style={{ font: "Robik", fontWeight: "600" }}>חזרה</span>
+                <span className="ff-robik fw-600">חזרה</span>
               </span>
             </button>
           </div>

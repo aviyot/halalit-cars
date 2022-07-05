@@ -1,5 +1,3 @@
-import "./CarDetial.css";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import {
@@ -25,21 +23,15 @@ const CarDetial = ({ carDetial, setCarDetial }) => {
             </span>
           </div>
           <button
-            className="bg-trans b-0 as-center"
+            className="bg-trans b-0 as-center m-2px as-center br-30px w-120px h-40px bc-white"
             style={{
-              alignSelf: "center",
-              margin: "2rem",
-              borderRadius: "30px",
-              width: "120px",
-              height: "40px",
-              backgroundColor: "white",
               color: "#378AD7",
             }}
             onClick={() => {
               setCarDetial(null);
             }}
           >
-            <span className="flex" style={{ justifyContent: "space-around" }}>
+            <span className="flex jc-space-around">
               <span class="material-icons">arrow_forward</span>
               <span className="fw-700" style={{ color: "#378AD7" }}>
                 חזרה לרכבים
@@ -47,12 +39,9 @@ const CarDetial = ({ carDetial, setCarDetial }) => {
             </span>
           </button>
         </div>
-        <div
-          className="flex h-100 flex-just-center"
-          style={{ flexBasis: "300px" }}
-        >
+        <div className="d-flex h-100 jc-center fb-300px ">
           <div
-            className="w-100 h-100 .p-rel"
+            className="w-100 h-100 p-relative"
             style={{
               backgroundImage: `url(${carDetial.img})`,
               backgroundRepeat: "no-repeat",
@@ -230,21 +219,13 @@ const CarDetial = ({ carDetial, setCarDetial }) => {
               </span>
             </div>
             <button
-              className="bg-trans b-0"
-              style={{
-                alignSelf: "center",
-                margin: "2rem",
-                borderRadius: "30px",
-                width: "120px",
-                height: "40px",
-                backgroundColor: "white",
-                color: "#378AD7",
-              }}
+              className="bg-trans b-0 as-center m-2px w-120px h-40px bc-white"
+              style={{ color: "#378AD7" }}
               onClick={() => {
                 setCarDetial(null);
               }}
             >
-              <span className="flex" style={{ justifyContent: "space-around" }}>
+              <span className="d-flex jc-space-around">
                 <span class="material-icons">arrow_forward</span>
                 <span className="fw-700" style={{ color: "#378AD7" }}>
                   חזרה לרכבים

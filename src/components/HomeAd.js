@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import maincover from "../../src/assets/maincover.png";
-import "./HomeAd.css";
 
 function HomeAd() {
   const [index, setIndex] = useState(0);
@@ -67,7 +66,17 @@ function HomeAd() {
                       <span style={{ color: "white" }}>
                         -{item.words.split("-")[1]}
                       </span>
-                      <button className="detail-button" src={item.deteilSrc}>
+                      <button
+                        className="br-40px b-0"
+                        style={{
+                          width: "256px",
+                          height: "58px",
+                          background:
+                            "linear-gradient(93.23deg, #ef8539 8.5%, #f7a66c 100%)",
+                          boxShadow: "0px 9px 15px rgba(184, 95, 31, 0.6)",
+                        }}
+                        src={item.deteilSrc}
+                      >
                         לפרטים
                       </button>
                     </span>
@@ -79,7 +88,7 @@ function HomeAd() {
         <div className="flex button flex-just-center gap-8 w-100">
           {homeAd.map((item, itemIndex) => (
             <div
-              className="inductors"
+              className="w-20px h-20px br-100 "
               key={item.imgSrc}
               type="radio"
               name="selectedAd"

@@ -3,55 +3,37 @@ import React from "react";
 const CarCard = ({ carDetial, setCarDetial }) => {
   return (
     <div
+      className="w-100 br-15px bc-white pb-20px"
+      style={{ boxShadow: "5px 10px 18px #888888" }}
       key={carDetial.name}
-      style={{
-        Width: "100%",
-        borderRadius: "15px",
-        boxShadow: "5px 10px 18px #888888",
-        paddingBottom: "20px",
-        backgroundColor: "white",
-      }}
       onClick={() => {
         setCarDetial(carDetial);
       }}
     >
       <img src={carDetial.img} className="car-detial-img" />
-      <h3 style={{ fontSize: "20px", font: "Robik", fontWeight: "700" }}>
-        {carDetial.name}
-      </h3>
-      <span className="flex" style={{ fontSize: "16px" }}>
+      <h3 className="fw-700 fs-20px ff-rubik ">{carDetial.name}</h3>
+      <span className="d-flex fs-16px">
         <span class="material-icons">pin_drop</span>
         <span>{carDetial.address}</span>
       </span>
       <h4>
         <div>
           <div
-            style={{
-              display: "flex",
-              gap: "10px",
-              backgroundColor: "#E2F1FF",
-              padding: "8px",
-              fontSize: "14px",
-            }}
+            className="d-flex g-8px p-8px fs-14px"
+            style={{ backgroundColor: "#E2F1FF" }}
           >
-            <span style={{ textAlign: "right" }}>
+            <span className="ta-center">
               <span
+                className="ff-rubik fw-700 fs-14px"
                 style={{
-                  fontFamily: "Rubik",
-                  fontStyle: "normal",
-                  fontWeight: "700",
-                  fontSize: "14px",
-                  lineHeight: "36px",
-                  textAlign: "right",
                   color: "#F0863A",
-                  display: "block",
                 }}
               >
                 הצעה למימון
               </span>
               <span>
                 החל מהחזר חודשי של :{" "}
-                <span style={{ fontWeight: "700" }}>
+                <span className="fs-700">
                   {" "}
                   {carDetial.proposal + " " + "שח"}
                 </span>
@@ -59,13 +41,8 @@ const CarCard = ({ carDetial, setCarDetial }) => {
             </span>
             <span>
               <span
+                className="ff-rubik fw-700 fs-14px ta-center"
                 style={{
-                  fontFamily: "Rubik",
-                  fontStyle: "normal",
-                  fontWeight: "700",
-                  fontSize: "14px",
-                  lineHeight: "36px",
-                  textAlign: "right",
                   color: "#282932",
                 }}
               >
@@ -78,88 +55,35 @@ const CarCard = ({ carDetial, setCarDetial }) => {
               </ul>
             </span>
           </div>
-          <div
-            style={{
-              display: "flex",
-              gap: "10px",
-              justifyContent: "space-around",
-              fontSize: "14px",
-              flexWrap: "wrap",
-            }}
-          >
-            <span
-              style={{
-                display: "flex",
-                gap: "2px",
-                flexDirection: "column",
-              }}
-            >
+          <div className="d-flex g-8px jc-space-around fw-warp">
+            <span className="d-flex g-2px fd-column">
               <span>שנת יצור</span>
-              <span style={{ fontSize: "16px", fontWeight: "700" }}>
-                {carDetial.manYear}
-              </span>
+              <span className="fs-16px fw-700">{carDetial.manYear}</span>
             </span>
-            <span
-              style={{
-                display: "flex",
-                gap: "2px",
-                flexDirection: "column",
-              }}
-            >
+            <span className="d-flex g-2px fd-column">
               <span>ק"מ</span>
-              <span style={{ fontSize: "16px", fontWeight: "700" }}>
-                {carDetial.km}
-              </span>
+              <span className="fs-16px fw-7000">{carDetial.km}</span>
             </span>
-            <span
-              style={{
-                display: "flex",
-                gap: "2px",
-                flexDirection: "column",
-              }}
-            >
+            <span className="d-flex g-8px fd-column">
               <span>יד</span>
-              <span style={{ fontSize: "16px", fontWeight: "700" }}>
-                {carDetial.yad}
-              </span>
+              <span className="fs-16px fw-700">{carDetial.yad}</span>
             </span>
-            <span
-              style={{
-                display: "flex",
-                gap: "2px",
-                flexDirection: "column",
-              }}
-            >
+            <span className="d-flex g-2px fd-column">
               <span>גיר</span>
-              <span style={{ fontSize: "16px", fontWeight: "700" }}>
-                {carDetial.girType}
-              </span>
+              <span className="fs-16px fw-700">{carDetial.girType}</span>
             </span>
           </div>
         </div>
       </h4>
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div className="d-flex jc-center">
         <button
-          variant="primary"
+          className="w-60 c-white b-0 h-40px br-40px"
           style={{
-            width: "60%",
-            color: "white",
-            border: 0,
-            height: "40px",
             background: "linear-gradient(93.23deg, #EF8539 8.5%, #F7A66C 100%)",
             boxShadow: "0px 9px 15px rgba(184, 95, 31, 0.6)",
-            borderRadius: "40px",
           }}
         >
-          <span
-            style={{
-              fontSize: "18px",
-              fontWeight: "700",
-              lineHeight: "36px",
-            }}
-          >
-            יצירת קשר
-          </span>
+          <span className="fs-18px fw-700">יצירת קשר</span>
         </button>
       </div>
     </div>

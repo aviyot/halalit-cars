@@ -16,7 +16,6 @@ function App() {
       <Header setSelectedUI={setSelectedUI} selectedUI={selectedUI} />
       <div
         style={{
-          marginTop: "50px",
           marginBottom: "50px",
         }}
       >
